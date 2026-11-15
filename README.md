@@ -9,10 +9,17 @@ Plataforma en desarrollo para crear páginas de barberías personalizadas y un s
 El archivo `index.html` contiene una demostración en español que se adapta al iPhone. Se puede probar directamente en un navegador una vez publicada como sitio de pruebas:
 
 - **Página del cliente:** ver barbería, fotos y precios; solicitar citas de prueba.
-- **Panel del barbero:** editar nombre, descripción, color, servicios y precios, tres enlaces de fotos y la política de depósito; revisar solicitudes simuladas.
+- **Panel del barbero:** editar nombre, descripción, color, servicios y precios; elegir una foto de fondo desde el teléfono y hasta tres imágenes de recortes (sin URL), configurar la política de depósito y revisar solicitudes simuladas.
 - **Panel Huxcasti:** crear otros negocios de ejemplo y seleccionarlos.
 
-**Importante:** la demostración no tiene autenticación, roles, servidores, sincronización, disponibilidad en tiempo real ni cobros reales. La información se guarda en `localStorage` del navegador y se puede perder. No debe utilizarse con clientes, pagos o información personal real. Cualquier persona con el enlace puede acceder a todas las vistas de la demo.
+**Importante:** la demostración no tiene autenticación, roles, servidores, sincronización, disponibilidad en tiempo real ni cobros reales. La información de los negocios se guarda en `localStorage` y las fotos optimizadas en `IndexedDB`, ambos dentro del mismo navegador. Las imágenes no se suben a GitHub ni se sincronizan con otros teléfonos o navegadores. Pueden desaparecer si se borran los datos del sitio. No debe utilizarse con clientes, pagos o información personal real. Cualquier persona con el enlace puede acceder a todas las vistas de la demo.
+
+## Fondos y fotos de la demostración
+
+- En el **Panel del barbero → Foto de fondo**, se puede elegir una imagen desde la fototeca o Archivos del teléfono. Se recorta visualmente con CSS (cover), con opciones para centrar o priorizar la parte superior o inferior. Un degradado facilita leer el nombre del negocio.
+- En **Galería de recortes**, se pueden seleccionar, reemplazar o eliminar tres fotos sin escribir enlaces externos.
+- Las fotos se redimensionan en el dispositivo (lado mayor de 2000 px para el fondo y 1200 px para galería) y se guardan como JPEG en IndexedDB **solo de ese navegador**. La fuente original no se sube al repositorio.
+- Esta función es **local y de prueba**, no es una subida real a la nube. Para producción se necesita almacenamiento de imágenes con autenticación, aislamiento por barbería, permisos y políticas de seguridad. No introducir material confidencial en esta demo pública.
 
 ## PayPal y ATH Móvil
 
@@ -34,8 +41,8 @@ Consulta documentación oficial antes de integrar: https://developer.paypal.com/
 
 ## Abrir la demo
 
-Abrir `index.html` localmente desde un navegador compatible o publicarlo en un entorno de pruebas. **No publicar todavía como sistema de reservas productivo.**
+Abrir la demostración pública en https://huxcasti.github.io/huxcasti-barber/ (GitHub Pages). **No utilizarla como sistema de reservas productivo.**
 
-El repositorio debe mantenerse **privado** mientras se desarrolla la autenticación y el backend.
+Actualmente el repositorio está público para probar GitHub Pages. No añadir secretos, contraseñas, tokens, fotografías privadas ni datos de clientes al repositorio. Volverlo privado con el plan gratuito puede impedir que GitHub Pages siga publicándolo.
 
 © Huxcasti — demostración interna.
