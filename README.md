@@ -16,7 +16,7 @@ El archivo `index.html` contiene una demostración en español que se adapta al 
 
 ## Fondos y fotos de la demostración
 
-- En el **Panel del barbero → Foto de fondo**, se puede elegir una imagen desde la fototeca o Archivos del teléfono. Se recorta visualmente con CSS (cover), con opciones para centrar o priorizar la parte superior o inferior. Un degradado facilita leer el nombre del negocio.
+- En **Panel del barbero → Diseño de toda tu página**, se puede elegir una imagen desde la fototeca o Archivos del teléfono. Esta foto se convierte en el **fondo completo de la página pública del cliente**, no solo en su encabezado. El fondo ocupa toda la pantalla y permanece mientras se desplaza, con `cover` y opciones para centrar o priorizar la parte superior o inferior. Cada negocio conserva su imagen y color propios; la galería, las tarjetas de servicios y el formulario se muestran encima con contraste y transparencia para facilitar la lectura.
 - En **Galería de recortes**, se pueden seleccionar, reemplazar o eliminar tres fotos sin escribir enlaces externos.
 - Las fotos se redimensionan en el dispositivo (lado mayor de 2000 px para el fondo y 1200 px para galería) y se guardan como JPEG en IndexedDB **solo de ese navegador**. La fuente original no se sube al repositorio.
 - Esta función es **local y de prueba**, no es una subida real a la nube. Para producción se necesita almacenamiento de imágenes con autenticación, aislamiento por barbería, permisos y políticas de seguridad. No introducir material confidencial en esta demo pública.
