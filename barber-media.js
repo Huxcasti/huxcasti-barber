@@ -54,12 +54,13 @@ window.huxMediaRefresh=async function(){
  activeUrls.forEach(url=>URL.revokeObjectURL(url));activeUrls=[];
  const makeUrl=blob=>{if(!blob)return "";const url=URL.createObjectURL(blob);activeUrls.push(url);return url};
  const background=makeUrl(values[0]),position=["top","center","bottom"].includes(current.coverPosition)?current.coverPosition:"center";
- const hero=document.querySelector("#publica .hero"),preview=document.getElementById("vistaFondo");
- if(hero&&preview){
-  const overlay='linear-gradient(0deg,rgba(0,0,0,.70),rgba(0,0,0,.10) 90%),url("'+background+'")';
-  hero.style.backgroundImage=background?overlay:"";
-  preview.style.backgroundImage=background?overlay:"";
-  hero.style.backgroundPosition="center "+position;
+ const fullPage=document.getElementById("fullPageBackground"),preview=document.getElementById("vistaFondo");
+ if(fullPage&&preview){
+  const overlay='linear-gradient(180deg,rgba(8,16,12,.42),rgba(8,16,12,.68)),url("'+background+'")';
+  const fallback='linear-gradient(145deg,var(--accent,#194b36),#091812)';
+  fullPage.style.backgroundImage=background?overlay:fallback;
+  preview.style.backgroundImage=background?overlay:fallback;
+  fullPage.style.backgroundPosition="center "+position;
   preview.style.backgroundPosition="center "+position;
  }
  for(let i=0;i<3;i++){
